@@ -141,12 +141,12 @@ def draw_players_info():
     text_position_y = 2 * otstup + (otstup + block_size) * FIELD_HEIGHT
     text_position_x = otstup
     pygame.draw.rect(screen, BLACK, (text_position_x, text_position_y,
-                                     2 * otstup + 2 * (otstup + block_size) * FIELD_WIDTH,
+                                     otstup + 2 * (otstup + block_size) * FIELD_WIDTH,
                                      HEIGHT))
     f1 = pygame.font.Font(None, 36)
     players = [TimeBoard.player1, TimeBoard.player2]
     for player in players:
-        screen.blit(f1.render(f'PLAYER1', True, WHITE),
+        screen.blit(f1.render(f'{player.full_name}', True, WHITE),
                     (text_position_x, text_position_y))
         screen.blit(f1.render(f'buttons: {player.buttons}', True, WHITE),
                     (text_position_x, text_position_y + text_otstup))
